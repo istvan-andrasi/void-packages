@@ -2,7 +2,7 @@
 pkgname=mesa
 reverts="24.3.1_1"
 version=24.2.8
-revision=2
+revision=3
 build_style=meson
 _llvmver=19
 #Disable LTO flag should be present, see https://gitlab.freedesktop.org/mesa/mesa/-/issues/6911
@@ -50,8 +50,8 @@ replaces="libGL>=10_1<19.2.5_2 libEGL>=10_1<19.2.5_2 libGLES>=10_1<19.2.5_2"
 # Check for correctness on major mesa version updates
 # Particularly, check if any new worthwhile drivers were added
 
-# swrast always present
-_gallium_drivers=" -Dgallium-drivers=swrast"
+# swrast and d3d12 always present
+_gallium_drivers=" -Dgallium-drivers=swrast,d3d12"
 _vulkan_drivers=" -Dvulkan-drivers="
 
 # amd and nvidia drivers on all platforms except where it makes no sense
